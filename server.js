@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.static(`${__dirname}/marvel-api/dist/`));
 
 app.get('*', (req, res) => {
-    res.sendFile(`./marvel-api/dist/index.html`); 
+  res.sendFile(`./marvel-api/dist/index.html`); 
 });
 
 app.listen(PORT, () => {
