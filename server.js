@@ -10,6 +10,6 @@ app.get('*', (req, res) => {
   res.sendFile(`./marvel-api/dist/index.html`); 
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, () => { 
   console.log('Servidor iniciado na porta ' + PORT);
 })
