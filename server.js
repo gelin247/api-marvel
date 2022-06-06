@@ -1,15 +1,14 @@
 const express = require('express');
-const path = require('path');
 const app = express();
-
-const PORT = process.env.PORT || 8080;
+const path = require('path');
 
 app.use(express.static(__dirname + '/dist/api-marvel'));
+app.listen(process.env.PORT || 8080);
 
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/dist/api-marvel/index.html');
-});
-
-app.listen(PORT, () => {
-  console.log('Servidor iniciado na porta ' + PORT);
+app.get('/*', function (req, res) {
+  const fullPath = path.join(__dirname + '/dist/api-marvel/index.html');
+  console.log(" Fetching from.." + fullPath);
+  res.sendFile(fullPath);
 })
+
+console.log('Server started running..');
