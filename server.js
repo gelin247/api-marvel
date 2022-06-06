@@ -4,10 +4,10 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.use(express.static(__dirname + '/dist/login-angular'));
+app.use(express.static(__dirname + '/dist/api-marvel'));
 
 app.get('/*', (req, res) => {
-  res.sendFile(__dirname + '/dist/login-angular/index.html');
+  res.sendFile(__dirname + '/dist/api-marvel/index.html');
 });
 
 app.listen(PORT, () => {
